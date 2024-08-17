@@ -1,0 +1,27 @@
+{
+  "name": "hallbooking",
+  "version": "1.0.0",
+  "description": "Back end for Hall booking API ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepikaaAPA/hall-booking.git"
+  },
+  "author": "Deepikaa APA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepikaaAPA/hall-booking/issues"
+  },
+  "homepage": "https://github.com/DeepikaaAPA/hall-booking#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
