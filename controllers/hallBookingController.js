@@ -54,7 +54,7 @@ const hallBookController = {
   },
   getAllBookings: async (req, res) => {
     bookings.length
-      ? res.send(bookings)
+      ? res.send({ count: bookings.length, message: bookings })
       : res.send({ message: `No bookings made` });
   },
   getCustomerBookings: async (req, res) => {
@@ -62,7 +62,7 @@ const hallBookController = {
     const customer = req.body.customer;
     const resBookings = bookings.filter((bkg) => bkg.customer === customer);
     resBookings.length
-      ? res.send(resBookings)
+      ? res.send({ count: resBookings.length, message: resBookings })
       : res.send({ message: `No bookings made by ${customer}` });
   },
 };
