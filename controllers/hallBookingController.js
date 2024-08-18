@@ -25,13 +25,15 @@ const hallBookController = {
     let reqDate = new Date(date);
     let reqStartTime = new Date(startTime);
     let reqEndTime = new Date(endTime);
-    // console.log("request body", req.body);
+    // bookings.forEach((bkg) =>
+    //   console.log(bkg.endTime, reqStartTime, bkg.endTime > reqStartTime)
+    // );
 
     const isBooked = bookings.filter(
       (bkg) =>
         bkg.room === room &&
         bkg.date.toISOString() == reqDate.toISOString() &&
-        bkg.endTime > reqStartTime
+        !(reqEndTime <= bkg.startTime || reqStartTime >= bkg.endTime)
     );
     console.log("isBooked", isBooked, isBooked.length);
     //room is already booked in that time
