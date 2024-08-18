@@ -3,6 +3,8 @@ const {
   createRoom,
   getAllRooms,
   book,
+  getCustomerBookings,
+  getAllBookings,
 } = require("../controllers/hallBookingController");
 const hallBookRouter = express.Router();
 
@@ -10,5 +12,7 @@ const hallBookRouter = express.Router();
 hallBookRouter.post("/createRoom", createRoom);
 hallBookRouter.get("/getAllRooms", getAllRooms);
 hallBookRouter.post("/book", book);
+hallBookRouter.get("/getCustomerBookings", getCustomerBookings);
+hallBookRouter.get("/getAllBookings", getAllBookings);
 
 module.exports = hallBookRouter;
