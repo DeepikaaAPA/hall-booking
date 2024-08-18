@@ -60,12 +60,18 @@ const hallBookController = {
       : res.send({ message: `No bookings made` });
   },
   getCustomerBookings: async (req, res) => {
-    console.log(req.body.customer);
     const customer = req.body.customer;
     const resBookings = bookings.filter((bkg) => bkg.customer === customer);
     resBookings.length
-      ? res.send({ count: resBookings.length, message: resBookings })
+      ? res.send({ count: resBookings.length, bookings: resBookings })
       : res.send({ message: `No bookings made by ${customer}` });
+  },
+  getRoomBookings: async (req, res) => {
+    const room = req.body.room;
+    const resBookings = bookings.filter((bkg) => bkg.room === room);
+    resBookings.length
+      ? res.send({ count: resBookings.length, bookings: resBookings })
+      : res.send({ message: `No bookings made for room: ${room}` });
   },
 };
 module.exports = hallBookController;
