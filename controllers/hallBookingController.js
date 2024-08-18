@@ -52,5 +52,12 @@ const hallBookController = {
       res.send({ message: "booked successfully", bookingID: newBookingId });
     }
   },
+  getCustomerBookings: async (req, res) => {
+    console.log(customer);
+    const resBookings = bookings.filter((bkg) => bkg.customer === req.customer);
+    resBookings.length
+      ? res.send(resBookings)
+      : res.send({ message: `No bookings made by ${req.customer}` });
+  },
 };
 module.exports = hallBookController;
